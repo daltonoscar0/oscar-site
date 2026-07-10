@@ -1,0 +1,445 @@
+/* ──────────────────────────────────────────────
+   Theme tokens
+   ────────────────────────────────────────────── */
+:root {
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #6e6e6e;
+  --line: #e6e6e6;
+  --card: #fafafa;
+  --accent: #111111; /* monochrome by design; swap for a color if you ever want one */
+  --mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --sans: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: #0b0b0c;
+  --text: #ececec;
+  --muted: #9a9a9a;
+  --line: #232325;
+  --card: #131315;
+  --accent: #ececec;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  font-size: 16px;
+  line-height: 1.65;
+  transition: background 0.25s ease, color 0.25s ease;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   Layout
+   ────────────────────────────────────────────── */
+.shell {
+  max-width: 660px;
+  margin: 0 auto;
+  padding: 0 24px 96px;
+}
+
+/* ──────────────────────────────────────────────
+   Nav
+   ────────────────────────────────────────────── */
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 32px 0 56px;
+}
+
+.nav-links {
+  display: flex;
+  gap: 22px;
+}
+
+.nav-links a {
+  font-family: var(--mono);
+  font-size: 0.85rem;
+  color: var(--muted);
+  transition: color 0.15s ease;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  color: var(--text);
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  color: var(--text);
+  font-size: 0.95rem;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.theme-toggle:hover {
+  border-color: var(--muted);
+  transform: rotate(15deg);
+}
+
+/* ──────────────────────────────────────────────
+   Home
+   ────────────────────────────────────────────── */
+.rolling-title {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: clamp(1.7rem, 5.5vw, 2.4rem);
+  margin: 0 0 10px;
+  min-height: 1.3em;
+  letter-spacing: -0.01em;
+}
+
+.cursor {
+  display: inline-block;
+  width: 0.55ch;
+  animation: blink 1.05s steps(1) infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
+  }
+}
+
+.tagline {
+  color: var(--muted);
+  margin: 0 0 48px;
+  font-size: 1.02rem;
+}
+
+.section-label {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  margin: 44px 0 14px;
+}
+
+/* ──────────────────────────────────────────────
+   Cards (GitHub, Recently Played)
+   ────────────────────────────────────────────── */
+.card {
+	display: block;
+  border: 1px solid var(--line);
+  background: var(--card);
+  border-radius: 12px;
+  padding: 18px 20px;
+  transition: border-color 0.15s ease;
+}
+
+a.card:hover {
+  border-color: var(--muted);
+}
+
+.card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+}
+
+.card-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.card-meta {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.card-body {
+  color: var(--muted);
+  font-size: 0.9rem;
+  margin-top: 6px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+
+.card-empty {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+/* Now block */
+.now-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.now-list li {
+  display: flex;
+  gap: 18px;
+  padding: 14px 20px;
+  font-size: 0.93rem;
+}
+
+.now-list li + li {
+  border-top: 1px solid var(--line);
+}
+
+.now-key {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+  min-width: 84px;
+  padding-top: 3px;
+}
+
+/* Recently played */
+.track {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.track-art {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: cover;
+  background: var(--line);
+  flex-shrink: 0;
+}
+
+.track-info {
+  min-width: 0;
+}
+
+.track-name {
+  font-weight: 600;
+  font-size: 0.92rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.track-artist {
+  color: var(--muted);
+  font-size: 0.84rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.live-dot {
+  display: inline-block;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #1db954;
+  margin-right: 7px;
+  animation: pulse 1.6s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  50% {
+    opacity: 0.35;
+  }
+}
+
+/* ──────────────────────────────────────────────
+   About
+   ────────────────────────────────────────────── */
+.page-title {
+  font-family: var(--mono);
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin: 0 0 28px;
+}
+
+.bio p {
+  margin: 0 0 1.2em;
+  color: var(--text);
+}
+
+.bio .placeholder {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ──────────────────────────────────────────────
+   Projects
+   ────────────────────────────────────────────── */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 28px;
+}
+
+.chip {
+  font-family: var(--mono);
+  font-size: 0.76rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  border: 1px solid var(--line);
+  background: none;
+  color: var(--muted);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.chip:hover {
+  border-color: var(--muted);
+  color: var(--text);
+}
+
+.chip.active {
+  background: var(--text);
+  color: var(--bg);
+  border-color: var(--text);
+}
+
+.project-grid {
+  display: grid;
+  gap: 14px;
+}
+
+.project-card {
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 18px 20px;
+  display: block;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.project-card:hover {
+  border-color: var(--muted);
+  transform: translateY(-1px);
+}
+
+.project-tags {
+  display: flex;
+  gap: 6px;
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  padding: 3px 9px;
+  border-radius: 999px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  color: var(--muted);
+}
+
+/* ──────────────────────────────────────────────
+   Contact
+   ────────────────────────────────────────────── */
+.contact-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contact-list li {
+  border-bottom: 1px solid var(--line);
+}
+
+.contact-list li:first-child {
+  border-top: 1px solid var(--line);
+}
+
+.contact-link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 4px;
+  transition: padding-left 0.18s ease;
+}
+
+.contact-link:hover {
+  padding-left: 14px;
+}
+
+.contact-label {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--muted);
+}
+
+.contact-value {
+  font-size: 0.95rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.contact-arrow {
+  color: var(--muted);
+  font-family: var(--mono);
+  transition: transform 0.18s ease;
+}
+
+.contact-link:hover .contact-arrow {
+  transform: translateX(4px);
+}
+
+/* ──────────────────────────────────────────────
+   Footer
+   ────────────────────────────────────────────── */
+.footer {
+  margin-top: 80px;
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--muted);
+  display: flex;
+  justify-content: space-between;
+}
