@@ -1,13 +1,20 @@
 {
-  "_comment": "Edit the values below anytime. Add or remove items freely — each needs a 'key' and a 'value'.",
+  "_comment": "Edit the values below anytime. Add or remove items freely — each needs a 'key' and a 'value'. A value can be a string or an array of strings; arrays render as a bulleted list.",
   "items": [
     {
       "key": "building",
-      "value": "Goldfish (CTO) under the Venture Funding from Swarthmore College. Personal projects: Neural Morphological Tagger; BPE Tokenizer; Research paper: Does Llama-3 Encode Hierarchical Structure or Linear Order? Garden Path Evidence."
+      "value": [
+        "Goldfish — a venture-backed consumer app funded through Swarthmore College, where I serve as CTO",
+        "A neural morphological tagger, built from scratch",
+        "Research paper: Does Llama-3 Encode Hierarchical Structure or Linear Order? Garden Path Evidence"
+      ]
     },
     {
       "key": "studying",
-      "value": "MIT OCW: Introduction to Neural Computation, Brain Mechanisms for Hearing and Speech"
+      "value": [
+        "MIT OCW: Introduction to Neural Computation",
+        "MIT OCW: Brain Mechanisms for Hearing and Speech"
+      ]
     }
   ]
 }

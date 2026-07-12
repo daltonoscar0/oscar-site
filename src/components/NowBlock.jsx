@@ -8,7 +8,15 @@ export default function NowBlock() {
         {now.items.map((item) => (
           <li key={item.key}>
             <span className="now-key">{item.key}</span>
-            <span>{item.value}</span>
+            {Array.isArray(item.value) ? (
+              <ul className="now-sublist">
+                {item.value.map((v) => (
+                  <li key={v}>{v}</li>
+                ))}
+              </ul>
+            ) : (
+              <span>{item.value}</span>
+            )}
           </li>
         ))}
       </ul>
