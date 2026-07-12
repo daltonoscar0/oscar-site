@@ -54,7 +54,7 @@ export default function RecentlyPlayed() {
         <div className="card card-empty">
           Waiting on a Last.fm API key — paste it into{" "}
           <code>src/config.js</code> and this becomes a live feed of what
-          Oscar's listening to on Apple Music.
+          Oscar's listening to on Spotify.
         </div>
       ) : error ? (
         <div className="card card-empty">
@@ -64,7 +64,7 @@ export default function RecentlyPlayed() {
         <div className="card card-empty">Tuning in…</div>
       ) : tracks.length === 0 ? (
         <div className="card card-empty">
-          Nothing scrobbled yet — once Apple Music plays start logging to
+          Nothing scrobbled yet — once Spotify plays start logging to
           Last.fm, they'll show up here.
         </div>
       ) : (
