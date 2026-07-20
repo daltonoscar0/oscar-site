@@ -1,0 +1,34 @@
+services:
+  oscar-site:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager  
+      labels:
+        - "traefik.enable=true"
+        - "traefik.docker.network=traefik"
+        - "traefik.http.routers.oscar_site.entrypoints=https"
+        - "traefik.http.routers.oscar_site.rule=Host(`oscarpdalton.com`)"
+        - "traefik.http.routers.oscar_site.tls=true"
+        - "traefik.http.routers.oscar_site.tls.certresolver=letsEncrypt"
+        - "traefik.http.services.oscar_site.loadbalancer.server.port=4173"
+       
+    command: sh -c "npm run preview"
+    networks:
+      - traefik
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "-G", "http://localhost:4173"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+
+networks:
+  traefik:
+    external: true
