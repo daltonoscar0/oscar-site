@@ -16,7 +16,6 @@ services:
         - "traefik.http.routers.oscar_site.entrypoints=https"
         - "traefik.http.routers.oscar_site.rule=Host(`oscarpdalton.com`)"
         - "traefik.http.routers.oscar_site.tls=true"
-        - "traefik.http.routers.oscar_site.tls.certresolver=letsEncrypt"
         - "traefik.http.services.oscar_site.loadbalancer.server.port=4173"
        
     command: sh -c "npm run preview"
