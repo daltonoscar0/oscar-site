@@ -1,5 +1,6 @@
 services:
   oscar-site:
+    image: oscar-site:latest
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -14,18 +15,18 @@ services:
         - "traefik.enable=true"
         - "traefik.docker.network=traefik"
         - "traefik.http.routers.oscar_site.entrypoints=https"
-        - "traefik.http.routers.oscar_site.rule=Host(`oscarpdalton.com`)"
+        - "traefik.http.routers.oscar_site.rule=Host(`oscarpdalton.com`) || Host(`www.oscarpdalton.com`)"
         - "traefik.http.routers.oscar_site.tls=true"
+        - "traefik.http.routers.oscar_site.tls.certresolver=letsEncrypt"
         - "traefik.http.services.oscar_site.loadbalancer.server.port=4173"
-       
-    command: sh -c "npm run preview"
+    command: sh -c "npm run preview -- --host 0.0.0.0"
     networks:
       - traefik
-    healthcheck:
-      test: ["CMD", "curl", "--fail", "-G", "http://localhost:4173"]
-      interval: 10s
-      timeout: 5s
-      retries: 10
+#    healthcheck:
+#      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:4173"]
+#      interval: 10s
+#      timeout: 5s
+#      retries: 3
 
 
 networks:
