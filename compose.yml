@@ -1,6 +1,6 @@
 services:
   oscar-site:
-    image: oscar-site:latest
+    image: ghcr.io/daltonoscar0/oscar-site:latest
     build:
       context: .
       dockerfile: ./Dockerfile
@@ -19,16 +19,38 @@ services:
         - "traefik.http.routers.oscar_site.tls=true"
         - "traefik.http.routers.oscar_site.tls.certresolver=letsEncrypt"
         - "traefik.http.services.oscar_site.loadbalancer.server.port=4173"
+        - "shepherd.oscar-site.enable=true"
     command: sh -c "npm run preview -- --host 0.0.0.0"
     networks:
       - traefik
-#    healthcheck:
-#      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:4173"]
-#      interval: 10s
-#      timeout: 5s
-#      retries: 3
+      - internal
+    healthcheck:
+      test: ["CMD", "wget", "--no-verbose", "--tries=1", "--spider", "http://127.0.0.1:4173"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
 
+  shepherd:
+    image: containrrr/shepherd
+    environment:
+      # Only update services that have this label
+      FILTER_SERVICES: "label=shepherd.oscar-site.enable=true"
+      # Rolling update behavior (passed through to docker service update)
+      UPDATE_OPTIONS: "--update-order start-first --update-failure-action rollback --update-parallelism 2 --update-delay 30s"
+      # How often to poll (or use swarm-cronjob instead)
+      SLEEP_TIME: "3m"
+      IMAGE_AUTOCLEAN_LIMIT: "2"
+      TZ: America/New_York
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      placement:
+        constraints:
+          - node.role == manager
+    networks:
+      - internal
 
 networks:
   traefik:
     external: true
+  internal:
