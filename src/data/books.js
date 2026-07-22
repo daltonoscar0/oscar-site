@@ -8,9 +8,13 @@
 
 export const books = [
   // ── currently reading ──────────────────────────────────────
-  { title: "Post Office", author: "Charles Bukowski", reading: true },
+  { title: "Parasites Like Us", author: "Adam Johnson", reading: true },
+  { title: "Tractatus Logico-Philosophicus", author: "Ludwig Wittgenstein", reading: true },
 
   // ── read, newest first ─────────────────────────────────────
+  { title: "So Much Water So Close To Home (short story)", author: "Raymond Carver", year: 2026 },
+  { title: "Rules of Attraction", author: "Bret Easton Ellis", year: 2026, liked: true },
+  { title: "Post Office", author: "Charles Bukowski", year: 2026, liked: true },
   { title: "Requiem for a Dream", author: "Hubert Selby Jr.", year: 2026, liked: true },
   { title: "Less Than Zero", author: "Bret Easton Ellis", year: 2026, liked: true },
   { title: "100 Selected Poems", author: "E. E. Cummings", year: 2026 },

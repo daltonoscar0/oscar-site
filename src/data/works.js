@@ -28,4 +28,13 @@ export const papers = [
   //   date: "2027",
   //   tags: ["academic paper"],
   // },
+  {
+    title:
+      "The Price of Reanalysis: Varying Ambiguous-Region Length in NP/Z Garden Paths to Dissociate Structural from Linear Prediction",
+    description:
+      "Independent research · Shows that garden-path effects in GPT-2-large and Pythia-1.4B are large (5–6.5 bits) but invariant to linear distance, ruling out strictly local and recency-weighted linear accounts of reanalysis and establishing the behavioral pattern an encoded-but-not-used account of syntactic structure requires.",
+    href: "/papers/price-of-reanalysis.pdf",
+    date: "2026",
+    tags: ["academic paper"],
+  },
 ];
