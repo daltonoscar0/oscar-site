@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────
-// SITE CONFIG — this is the only file you need to touch for
+// SITE CONFIG, this is the only file you need to touch for
 // keys, handles, and links. Search for TODO to find blanks.
 // ─────────────────────────────────────────────────────────────
 
