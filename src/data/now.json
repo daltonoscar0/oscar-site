@@ -5,8 +5,18 @@
       "key": "building",
       "value": [
         "Goldfish — a venture-backed consumer app funded through Swarthmore College, where I serve as CTO",
-        "A neural morphological tagger, built from scratch",
-        "Research paper: Price of Reanalysis: Varying Ambiguous-Region Length in NP/Z Garden Paths to Dissociate Structural from Linear Prediction"
+        "A text front end for TTS: a weighted-FST normalizer (Sayso), a heteronym grapheme-to-phoneme disambiguator (Lede), and a phrase-break predictor, chained into one pipeline with a live demo coming to this site",
+        "Revisions to my paper Price of Reanalysis: Varying Ambiguous-Region Length in NP/Z Garden Paths to Dissociate Structural from Linear Prediction, following its first round of ACL Rolling Review"
+      ]
+    },
+    {
+      "key": "taking",
+      "value": [
+        "CPSC 041 Algorithms",
+        "LING 045 Phonetics and Phonology",
+        "MAT 033 Basic Several-Variable Calculus",
+        "FREN 015 Advanced French II",
+        "RELG 065 Modern Judaism"
       ]
     },
     {
