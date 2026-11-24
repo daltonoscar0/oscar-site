@@ -1,74 +1,50 @@
-# oscar-dalton-site
+# oscar-site
 
-Minimalist personal site for Oscar Dalton. Vite + React, monochrome
-light/dark theme, type-forward layout.
-
-## Run it
+Personal site, live at https://oscarpdalton.com. Vite + React.
 
 ```bash
 npm install
-npm run dev      # http://localhost:5173
-npm run build    # production build → /dist
+npm run dev      # localhost:5173
+npm run build    # → dist/
 ```
 
 ## Pages
 
-| Route       | Contents                                                                  |
-| ----------- | ------------------------------------------------------------------------- |
-| `/`         | Rolling "hello, Oscar here." title · tagline · Latest on GitHub · Now block · Recently Played |
-| `/about`    | Long-form biography (no pictures, no timeline)                            |
-| `/projects` | All public GitHub repos (auto-fetched) + writings + papers, filterable by tag |
-| `/contact`  | Cascading list: Instagram, emails, GitHub, CS site, resume, LinkedIn      |
+- `/` is one long page: about, research, now (with books), projects,
+  commits, contact.
+  Old links (`/about`, `/projects`, `/books`, `/contact`) jump to the
+  matching section.
+- `/commits` lists every public commit, newest first, grouped by day.
+  It loads 100 at a time as you scroll, and each row opens to show the
+  full message, comment count, and changed files.
 
-Dark/light toggle lives top-right and remembers the choice.
+## Editing
 
-## Fill-in checklist (search the codebase for `TODO`)
+| What                      | Where                     |
+| ------------------------- | ------------------------- |
+| name, degree, links       | `src/config.js`           |
+| research areas            | `src/data/research.js`    |
+| now                       | `src/data/now.json`       |
+| papers, writing           | `src/data/works.js`       |
+| books (shown under now)   | `src/data/books.js`       |
+| pixel icons               | `GLYPHS` in `src/components/Pixel.jsx` |
 
-1. **Last.fm API key** → `src/config.js` → `lastfm.apiKey`.
-   Get one at <https://www.last.fm/api/account/create>. Until it's
-   pasted in, the widget shows a friendly placeholder. The key is
-   public/read-only by design — safe to ship in client code.
-2. **Resume** → drop `resume.pdf` into `/public` (it serves at `/resume.pdf`).
-3. **Biography** → `src/pages/About.jsx`, between the TODO markers.
-4. **Writings & papers** → `src/data/works.js`. GitHub repos are pulled
-   automatically; never list them by hand.
-5. **Now block** → edit `src/data/now.json` whenever life changes.
-   The "reading" line is currently a TODO.
+Icons are bitmaps of `#` and `.`. Add a new one to `GLYPHS` and use it
+with `<Pixel glyph="name" />`.
 
-## How the live widgets work
+## Data sources
 
-- **Latest on GitHub** — reads the public GitHub API for
-  `daltonoscar0`'s most recent push (commit message, repo, time).
-  No token needed; unauthenticated requests allow 60/hr per visitor IP,
-  which is plenty for a personal site.
-- **Recently Played** — reads Last.fm's `user.getrecenttracks` for
-  `OscarTaco1` and refreshes every 60s, with a pulsing dot when a track
-  is playing right now. Keep a scrobbler connected to Apple Music
-  (Last.fm iOS app → Settings → Connect to Apple Music, or the Last.fm
-  desktop app on Mac) so plays keep flowing.
+- GitHub repos and the latest-commit card use the public REST API.
+- `/commits` uses GitHub commit search (`author:daltonoscar0`). That
+  covers public repos and default branches only, and search returns at
+  most 1000 results. Without a token the search limit is about 10
+  requests a minute per visitor, so pages are cached in sessionStorage
+  for 10 minutes. Opening a commit makes one more request for its file
+  list.
+- Recently played comes from Last.fm (`OscarTaco1`), refreshed every
+  60 seconds.
 
-## Deploying (Vercel, recommended)
+## Deploy
 
-1. Push this folder to a GitHub repo.
-2. <https://vercel.com> → New Project → import the repo. Vercel detects
-   Vite automatically; defaults are fine.
-3. Because this is a single-page app, add a `vercel.json` rewrite if
-   you ever see 404s on refresh:
-
-```json
-{ "rewrites": [{ "source": "/(.*)", "destination": "/" }] }
-```
-
-4. Point your domain at it under Project → Settings → Domains.
-
-GitHub Pages works too, but needs a base-path tweak in
-`vite.config.js` and a 404 redirect hack for client-side routing —
-Vercel is less fuss.
-
-## Customizing
-
-- Colors/spacing/fonts: everything is a CSS variable at the top of
-  `src/styles.css`.
-- Rolling title phrases: `src/config.js` → `rollingTitles` (one entry =
-  type once and stop; multiple = cycle).
-- Tags: `src/config.js` → `tags`.
+`npm run deploy` rsyncs `dist/` to the Swarthmore CS server. Pushing to
+the `deploy` branch builds the Docker image and pushes it to GHCR.
