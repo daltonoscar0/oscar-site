@@ -47,25 +47,22 @@ export default function RecentlyPlayed() {
   }, []);
 
   return (
-    <section>
-      <h2 className="section-label">Recently Played</h2>
+    <div className="live">
+      <p className="live-label">recently played</p>
 
       {!apiKey ? (
         <div className="card card-empty">
-          Waiting on a Last.fm API key — paste it into{" "}
-          <code>src/config.js</code> and this becomes a live feed of what
-          Oscar's listening to on Spotify.
+          No Last.fm key set in <code>src/config.js</code>.
         </div>
       ) : error ? (
         <div className="card card-empty">
-          Couldn't reach Last.fm right now — check back in a bit.
+          Last.fm isn’t answering right now.
         </div>
       ) : !tracks ? (
-        <div className="card card-empty">Tuning in…</div>
+        <div className="card card-empty">loading…</div>
       ) : tracks.length === 0 ? (
         <div className="card card-empty">
-          Nothing scrobbled yet — once Spotify plays start logging to
-          Last.fm, they'll show up here.
+          nothing yet.
         </div>
       ) : (
         <div className="card" style={{ display: "grid", gap: 14 }}>
@@ -79,7 +76,7 @@ export default function RecentlyPlayed() {
               <div className="track-info">
                 <div className="track-name">
                   {t.nowPlaying && <span className="live-dot" aria-label="now playing" />}
-                  {t.name}
+                  <span className="clip">{t.name}</span>
                 </div>
                 <div className="track-artist">{t.artist}</div>
               </div>
@@ -87,6 +84,6 @@ export default function RecentlyPlayed() {
           ))}
         </div>
       )}
-    </section>
+    </div>
   );
 }

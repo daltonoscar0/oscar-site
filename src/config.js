@@ -1,22 +1,33 @@
-// ─────────────────────────────────────────────────────────────
 // SITE CONFIG, this is the only file you need to touch for
 // keys, handles, and links. Search for TODO to find blanks.
-// ─────────────────────────────────────────────────────────────
 
 export const site = {
   name: "Oscar Dalton",
   tagline:
-    "native new yorker exploring language, computing, and their intersect.",
+    "native new yorker exploring language, finance, computing, and their intersects.",
 
-  // Strings the home-page title cycles through. Keep just one if
-  // you'd rather it type a single phrase and stop.
-  rollingTitles: [
-    "hello, Oscar here.",
-    "salut, c'est Oscar.", // feel free to delete or add more
+  degree: [
+    "Honors Linguistics & Computer Science",
+    "minor in Pure Mathematics",
+    "Swarthmore College",
   ],
+
+  // Places on the About section. `href` makes the row a link.
+  places: [
+    { name: "Swarthmore College", role: "SoCS Lab, Psycholinguistics Lab", href: "https://www.swarthmore.edu" },
+    { name: "NYU", role: "LambdaCalculator", href: "https://github.com/nyusemantics/LambdaCalculatorPublic" },
+    { name: "CUNY", role: "Computational Linguistics Lab", href: "https://compling.ws.gc.cuny.edu/" },
+    { name: "Goldfish", role: "co-founder, CTO", href: "https://apps.apple.com/us/app/goldfish-focus/id6759563684" },
+  ],
+
+  location: "ny ↔ swarthmore",
 
   github: {
     username: "daltonoscar0",
+  },
+
+  letterboxd: {
+    username: "opd68",
   },
 
   lastfm: {
@@ -31,6 +42,7 @@ export const site = {
     { label: "GitHub", value: "daltonoscar0", href: "https://github.com/daltonoscar0" },
     { label: "CS Website", value: "cs.swarthmore.edu/~odalton1", href: "https://www.cs.swarthmore.edu/~odalton1/" },
     { label: "Resume", value: "See my resume!", href: "/resume.docx" },
+    { label: "Letterboxd", value: "opd68", href: "https://letterboxd.com/opd68/" },
     { label: "LinkedIn", value: "in/oscarpdalton", href: "https://www.linkedin.com/in/oscarpdalton/" },
   ],
 

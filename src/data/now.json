@@ -1,30 +1,76 @@
 {
-  "_comment": "Edit the values below anytime. Add or remove items freely — each needs a 'key' and a 'value'. A value can be a string or an array of strings; arrays render as a bulleted list.",
+  "_comment": "Edit the values below anytime. A value is a list; each entry is a string or {code, title, href} (code becomes the link). 'took' entries are a string or {code, href}.",
   "items": [
     {
       "key": "building",
       "value": [
-        "Goldfish — a venture-backed consumer app funded through Swarthmore College, where I serve as CTO",
-        "A text front end for TTS: a weighted-FST normalizer (Sayso), a heteronym grapheme-to-phoneme disambiguator (Lede), and a phrase-break predictor, chained into one pipeline with a live demo coming to this site",
-        "Revisions to my paper Price of Reanalysis: Varying Ambiguous-Region Length in NP/Z Garden Paths to Dissociate Structural from Linear Prediction, following its first round of ACL Rolling Review"
+        "Goldfish, a venture-backed study app, where I'm co-founder and CTO",
+        "Interpretability of market language models: probing, activation patching, and sparse autoencoders on transformers trained on market data",
+        "A morphological tokenizer for Irish with Jane Adkins (DCU)",
+        "Garden-path processing in language models and in human readers at the Psycholinguistics Lab",
+        "A paper on verb shift across neopronominal agreement paradigms with the SoCS Lab",
+        "New features for LambdaCalculator at NYU"
       ]
     },
     {
       "key": "taking",
       "value": [
-        "CPSC 041 Algorithms",
-        "LING 045 Phonetics and Phonology",
-        "MAT 033 Basic Several-Variable Calculus",
-        "FREN 015 Advanced French II",
-        "RELG 065 Modern Judaism"
+        {
+          "code": "CPSC 041",
+          "title": "Algorithms",
+          "href": "https://www.cs.swarthmore.edu/~ngrammel/cs41/f26/"
+        },
+        {
+          "code": "LING 045",
+          "title": "Phonetics and Phonology",
+          "href": "https://catalog.swarthmore.edu/preview_course_nopop.php?catoid=31&coid=102208"
+        },
+        {
+          "code": "MATH 033",
+          "title": "Basic Several-Variable Calculus",
+          "href": "https://catalog.swarthmore.edu/preview_course_nopop.php?catoid=31&coid=102290"
+        },
+        {
+          "code": "FREN 015",
+          "title": "Advanced French II",
+          "href": "https://catalog.swarthmore.edu/preview_course_nopop.php?catoid=31&coid=101986"
+        },
+        {
+          "code": "RELG 065",
+          "title": "Modern Judaism",
+          "href": "https://catalog.swarthmore.edu/preview_program.php?catoid=31&poid=2468"
+        }
       ]
+    }
+  ],
+  "took": [
+    {
+      "code": "CPSC 014",
+      "href": "https://catalog.swarthmore.edu/preview_program.php?catoid=31&poid=2436"
     },
     {
-      "key": "studying",
-      "value": [
-        "MIT OCW: Introduction to Neural Computation",
-        "MIT OCW: Brain Mechanisms for Hearing and Speech"
-      ]
+      "code": "CPSC 031",
+      "href": "https://catalog.swarthmore.edu/preview_course_nopop.php?catoid=31&coid=101700"
+    },
+    {
+      "code": "CPSC 035",
+      "href": "https://catalog.swarthmore.edu/preview_course_nopop.php?catoid=31&coid=101701"
+    },
+    {
+      "code": "MATH 025",
+      "href": "https://catalog.swarthmore.edu/preview_course_nopop.php?catoid=31&coid=102284"
+    },
+    {
+      "code": "MATH 027",
+      "href": "https://catalog.swarthmore.edu/preview_course_nopop.php?catoid=31&coid=102286"
+    },
+    {
+      "code": "LING 040",
+      "href": "https://catalog.swarthmore.edu/preview_course_nopop.php?catoid=31&coid=102410"
+    },
+    {
+      "code": "LING 065",
+      "href": "https://moodle.swarthmore.edu/course/info.php?id=29207"
     }
   ]
 }

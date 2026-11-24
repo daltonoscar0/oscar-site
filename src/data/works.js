@@ -1,10 +1,8 @@
-// ─────────────────────────────────────────────────────────────
 // SOCIAL WRITINGS & ACADEMIC PAPERS
-// GitHub projects are pulled automatically from the GitHub API —
+// GitHub projects are pulled automatically from the GitHub API;
 // you never list those here. These two arrays are for everything
 // else. Each entry appears as a card on the Projects page,
 // filterable by its tags.
-// ─────────────────────────────────────────────────────────────
 
 export const writings = [
   // TODO: add social writings as they're published. Example shape:
