@@ -21,11 +21,21 @@ export const EXAMPLES = [
     text: FLAGSHIP,
   },
   {
+    // Nine decisions, and "record" twice with two different pronunciations in
+    // the same sentence, which is the whole problem in one clause. "wound"
+    // comes back at 0.56, correct but barely, and that is left in: a
+    // confidence worth reading has to be able to be low.
+    //
+    // "a minute tear" was in an earlier version of this sentence and is not
+    // any more. The probe reads "minute" as the noun there, which is wrong,
+    // and a sentence whose job is to demonstrate the stage should not be
+    // carrying a known wrong answer. It is reported in the README instead.
     label: "heteronyms",
-    hint: "eight words that are spelled one way and said two",
+    hint: "nine words spelled one way and said two, including one word twice",
     text:
-      "The bass player wound the bass line around a minute tear in the " +
-      "console, then refused to refuse the invalid contract.",
+      "The bass player wound the cable, tore a tear in the console, and " +
+      "refused to refuse the invalid contract, so we did not record a " +
+      "second record.",
   },
   {
     label: "numbers",
