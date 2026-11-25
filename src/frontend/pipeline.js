@@ -9,6 +9,12 @@
 // Nothing in this file decides anything. Every field it passes on was computed
 // by the stage that owns it -- the costs that chose a reading, the probability
 // behind a sense, the rule that placed a break. The page's job is to show them.
+//
+// Nothing is imported here. The saved results and the cold-start fallback are
+// JSON, and a bare JSON import resolves under the bundler but not under plain
+// node -- which is what tests/test_explanations.mjs runs this file with. So the
+// component owns those imports and passes the data in, the same arrangement
+// results/*.json already has.
 
 export const FLAGSHIP =
   "I read the 2nd Dr. Lee lead a live band on Reading Rd at 10:30";
@@ -200,6 +206,45 @@ export async function health(apiBase, { signal } = {}) {
   const response = await fetch(`${apiBase}/health`, { signal });
   if (!response.ok) throw new ApiError(`health returned ${response.status}`);
   return response.json();
+}
+
+// --------------------------------------------------------------------------
+// The cold-start fallback
+// --------------------------------------------------------------------------
+
+/**
+ * Stages 2 and 3 for an input the page could reach without typing, or null.
+ *
+ * The service runs on a free CPU host that idles out, so the first visitor
+ * after a quiet spell waits about half a minute for a container to wake. Stage
+ * 1 has already answered in the tab by then, and without this the last two
+ * panels sit empty at exactly the moment someone is deciding whether to care.
+ *
+ * Keyed on the *raw* input rather than the normalised text, because that is
+ * what the page has in hand before stage 1 finishes and what an example button
+ * sets. Matching is exact: a saved answer shown for a sentence it was not
+ * computed from would be a wrong answer presented as a cached one, which is
+ * worse than an empty panel.
+ *
+ * `table` is web/precomputed.json, which `eval/make_precomputed.py` generates
+ * from the same code the service runs; its `--check` mode fails if a stage's
+ * output has moved. Passed in rather than imported — see the note at the top.
+ */
+export function precomputed(table, text) {
+  const entry = table?.entries?.[text];
+  if (!entry) return null;
+  return {
+    lede: entry.lede,
+    caesura: entry.caesura,
+    // No `timings_ms`: nothing was timed, and a panel must not report a
+    // latency it did not incur.
+    precomputed: true,
+  };
+}
+
+/** The raw inputs that have a saved answer. For tests and for the page. */
+export function precomputedInputs(table) {
+  return Object.keys(table?.entries ?? {});
 }
 
 // --------------------------------------------------------------------------

@@ -284,6 +284,27 @@
   .fx-spin { animation: none; opacity: 0.6; }
 }
 
+/* Saved stage 2 and 3 output, shown while the service wakes or when it will
+   not. Deliberately not styled like a normal panel: a visitor has to be able
+   to tell at a glance that these two numbers were not just computed, and the
+   text says so too, because colour alone is not a label. */
+.fx-precomputed {
+  background: var(--bg);
+  padding: 14px clamp(16px, 2.4vw, 28px);
+  border-left: 2px solid var(--fx-handed);
+  max-width: 54em;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+.fx-precomputed strong {
+  color: var(--ink);
+  font-weight: 500;
+}
+.fx-precomputed code {
+  font-size: 12.5px;
+}
+
 .fx-down {
   background: var(--bg);
   padding: 24px clamp(16px, 2.4vw, 28px);
