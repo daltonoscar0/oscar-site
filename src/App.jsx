@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { Suspense, lazy, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import Nav from "./components/Nav.jsx";
 import CursorTrail from "./components/CursorTrail.jsx";
@@ -9,6 +9,12 @@ import Now from "./pages/Now.jsx";
 import Projects from "./pages/Projects.jsx";
 import Contact from "./pages/Contact.jsx";
 import Commits, { CommitsSection } from "./pages/Commits.jsx";
+// The TTS front-end demo. Source of truth is the frontend-demo repo, which
+// copies the component, its stylesheet and the saved evaluation results into
+// src/frontend/ and the WebAssembly build into public/frontend/ with
+// `make sync-site`. Lazy, because it carries three result files and only the
+// /frontend route needs them.
+const Frontend = lazy(() => import("./frontend/Frontend.jsx"));
 
 // Old routes still land on the right section of the home page.
 const ROUTE_TO_SECTION = {
@@ -51,6 +57,14 @@ export default function App() {
     <>
       <Routes>
         <Route path="/commits" element={<Commits />} />
+        <Route
+          path="/frontend"
+          element={
+            <Suspense fallback={<main className="fx-boot">loading…</main>}>
+              <Frontend />
+            </Suspense>
+          }
+        />
         <Route path="*" element={<Home />} />
       </Routes>
       <Nav />

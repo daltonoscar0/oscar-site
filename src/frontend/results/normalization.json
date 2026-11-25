@@ -1,0 +1,396 @@
+{
+  "stage": "normalize",
+  "component": "sayso",
+  "runner": "wasm",
+  "style": "phone",
+  "cases": "eval/data/normalization_cases.tsv",
+  "n": 122,
+  "correct": 90,
+  "accuracy": 0.7377,
+  "per_class": {
+    "DATE": {
+      "n": 17,
+      "correct": 13,
+      "accuracy": 0.7647
+    },
+    "DECADE": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "TIME": {
+      "n": 11,
+      "correct": 11,
+      "accuracy": 1.0
+    },
+    "ORDINAL": {
+      "n": 10,
+      "correct": 10,
+      "accuracy": 1.0
+    },
+    "MONEY": {
+      "n": 11,
+      "correct": 10,
+      "accuracy": 0.9091
+    },
+    "MEASURE": {
+      "n": 7,
+      "correct": 4,
+      "accuracy": 0.5714
+    },
+    "CARDINAL": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "DECIMAL": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "FRACTION": {
+      "n": 4,
+      "correct": 4,
+      "accuracy": 1.0
+    },
+    "RANGE": {
+      "n": 1,
+      "correct": 1,
+      "accuracy": 1.0
+    },
+    "PHONE": {
+      "n": 8,
+      "correct": 5,
+      "accuracy": 0.625
+    },
+    "ADDRESS": {
+      "n": 21,
+      "correct": 9,
+      "accuracy": 0.4286
+    },
+    "NAME": {
+      "n": 13,
+      "correct": 8,
+      "accuracy": 0.6154
+    },
+    "ABBREV": {
+      "n": 8,
+      "correct": 4,
+      "accuracy": 0.5
+    },
+    "LETTERS": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1.0
+    },
+    "PIPELINE": {
+      "n": 3,
+      "correct": 3,
+      "accuracy": 1.0
+    }
+  },
+  "failures": [
+    {
+      "input": "Dec 25",
+      "got": "Dec twenty-five",
+      "expected": "december twenty-fifth",
+      "class": "DATE",
+      "note": "no year",
+      "cause": "month_abbrev_without_year"
+    },
+    {
+      "input": "Aug 1990",
+      "got": "Aug nineteen ninety",
+      "expected": "august nineteen ninety",
+      "class": "DATE",
+      "note": "abbreviated month with a bare year",
+      "cause": "month_abbrev_without_year"
+    },
+    {
+      "input": "Jun 29",
+      "got": "Jun twenty-nine",
+      "expected": "june twenty-ninth",
+      "class": "DATE",
+      "note": "three-letter abbreviation, no year",
+      "cause": "month_abbrev_without_year"
+    },
+    {
+      "input": "11/22/63",
+      "got": "eleven/twenty-two/sixty-three",
+      "expected": "november twenty-second sixty-three",
+      "class": "DATE",
+      "note": "two-digit year",
+      "cause": "two_digit_year"
+    },
+    {
+      "input": "-$40",
+      "got": "-forty dollars",
+      "expected": "minus forty dollars",
+      "class": "MONEY",
+      "note": "a sign has to be spoken",
+      "cause": "unspoken_character_glued_on"
+    },
+    {
+      "input": "797 MB",
+      "got": "seven nine seven, M B",
+      "expected": "seven hundred ninety-seven megabytes",
+      "class": "MEASURE",
+      "note": "byte units",
+      "cause": "measure_claimed_by_phone"
+    },
+    {
+      "input": "32 F",
+      "got": "thirty-two F",
+      "expected": "thirty-two degrees fahrenheit",
+      "class": "MEASURE",
+      "note": "temperature",
+      "cause": "missing_from_table"
+    },
+    {
+      "input": "5 ft 10 in",
+      "got": "five feet ten in",
+      "expected": "five feet ten inches",
+      "class": "MEASURE",
+      "note": "two units in one measurement",
+      "cause": "missing_from_table"
+    },
+    {
+      "input": "dial 911",
+      "got": "dial nine hundred eleven",
+      "expected": "dial nine one one",
+      "class": "PHONE",
+      "note": "short code, not a quantity",
+      "cause": "keyword_before_digits"
+    },
+    {
+      "input": "extension 4412",
+      "got": "extension four thousand four hundred twelve",
+      "expected": "extension four four one two",
+      "class": "PHONE",
+      "note": "digits after a keyword",
+      "cause": "keyword_before_digits"
+    },
+    {
+      "input": "PIN 4417",
+      "got": "PIN four thousand four hundred seventeen",
+      "expected": "PIN four four one seven",
+      "class": "PHONE",
+      "note": "the same shape, different keyword",
+      "cause": "keyword_before_digits"
+    },
+    {
+      "input": "1600 Pennsylvania Ave NW",
+      "got": "one thousand six hundred Pennsylvania Avenue NW",
+      "expected": "sixteen hundred Pennsylvania Avenue northwest",
+      "class": "ADDRESS",
+      "note": "house number is read in pairs, and a quadrant is a word",
+      "cause": "one_abbrev_per_span"
+    },
+    {
+      "input": "350 5th Ave",
+      "got": "three hundred fifty fifth avenue",
+      "expected": "three fifty fifth avenue",
+      "class": "ADDRESS",
+      "note": "house number in pairs, numbered street as an ordinal",
+      "cause": "house_number_as_quantity"
+    },
+    {
+      "input": "742 Evergreen Terrace",
+      "got": "seven hundred forty-two Evergreen Terrace",
+      "expected": "seven forty-two Evergreen Terrace",
+      "class": "ADDRESS",
+      "note": "three-digit house number",
+      "cause": "house_number_as_quantity"
+    },
+    {
+      "input": "1234 W Main St",
+      "got": "one thousand two hundred thirty-four west Main Street",
+      "expected": "twelve thirty-four west Main Street",
+      "class": "ADDRESS",
+      "note": "four-digit house number, direction, suffix",
+      "cause": "house_number_as_quantity"
+    },
+    {
+      "input": "221B Baker St",
+      "got": "two hundred twenty-one B Baker Street",
+      "expected": "two twenty-one B Baker Street",
+      "class": "ADDRESS",
+      "note": "letter suffix on the house number",
+      "cause": "unspoken_character_glued_on"
+    },
+    {
+      "input": "St Paul St",
+      "got": "Saint Paul St",
+      "expected": "Saint Paul Street",
+      "class": "ADDRESS",
+      "note": "\"St\" twice, two different readings",
+      "cause": "one_abbrev_per_span"
+    },
+    {
+      "input": "Mt Vernon Ave",
+      "got": "Mount Vernon Ave",
+      "expected": "Mount Vernon Avenue",
+      "class": "ADDRESS",
+      "note": "two abbreviations in one span",
+      "cause": "one_abbrev_per_span"
+    },
+    {
+      "input": "Ft Worth, TX",
+      "got": "Ft Worth, Texas",
+      "expected": "Fort Worth, Texas",
+      "class": "ADDRESS",
+      "note": "abbreviated place name with a state",
+      "cause": "missing_from_table"
+    },
+    {
+      "input": "PO Box 1234",
+      "got": "PO Box twelve thirty-four",
+      "expected": "P O Box twelve thirty-four",
+      "class": "ADDRESS",
+      "note": "a box number is read in pairs",
+      "cause": "bare_capitals_not_spelled"
+    },
+    {
+      "input": "Rt 66",
+      "got": "Rt sixty-six",
+      "expected": "Route sixty-six",
+      "class": "ADDRESS",
+      "note": "route abbreviation",
+      "cause": "missing_from_table"
+    },
+    {
+      "input": "Dr Martin Luther King Jr Blvd",
+      "got": "Doctor Martin Luther King Jr Blvd",
+      "expected": "Doctor Martin Luther King Junior Boulevard",
+      "class": "ADDRESS",
+      "note": "three abbreviations in one span",
+      "cause": "one_abbrev_per_span"
+    },
+    {
+      "input": "St Louis, MO 63101",
+      "got": "St Louis, Missouri six three one oh one",
+      "expected": "Saint Louis, Missouri six three one oh one",
+      "class": "ADDRESS",
+      "note": "title inside a city name, and a zip read as digits",
+      "cause": "one_abbrev_per_span"
+    },
+    {
+      "input": "I walked down St Paul St to St Mary's",
+      "got": "I walked down Saint Paul St to Saint Mary's",
+      "expected": "I walked down Saint Paul Street to Saint Mary's",
+      "class": "ABBREV",
+      "note": "three \"St\" tokens, two readings",
+      "cause": "one_abbrev_per_span"
+    },
+    {
+      "input": "No. 9",
+      "got": "No. nine",
+      "expected": "number nine",
+      "class": "ABBREV",
+      "note": "number sign",
+      "cause": "missing_from_table"
+    },
+    {
+      "input": "pp 1-10",
+      "got": "pp one to ten",
+      "expected": "pages one to ten",
+      "class": "ABBREV",
+      "note": "page range",
+      "cause": "missing_from_table"
+    },
+    {
+      "input": "approx 40",
+      "got": "approx forty",
+      "expected": "approximately forty",
+      "class": "ABBREV",
+      "note": "clipped word",
+      "cause": "missing_from_table"
+    },
+    {
+      "input": "Lt. Col. Baker",
+      "got": "Lieutenant Col. Baker",
+      "expected": "Lieutenant Colonel Baker",
+      "class": "NAME",
+      "note": "two titles in sequence",
+      "cause": "one_abbrev_per_span"
+    },
+    {
+      "input": "Mr. and Mrs. Smith",
+      "got": "mister. and Missus Smith",
+      "expected": "Mister and Missus Smith",
+      "class": "NAME",
+      "note": "two titles joined by a lowercase word",
+      "cause": "one_abbrev_per_span"
+    },
+    {
+      "input": "F. Scott Fitzgerald",
+      "got": "F. Scott Fitzgerald",
+      "expected": "F Scott Fitzgerald",
+      "class": "NAME",
+      "note": "one initial inside a name",
+      "cause": "single_initial_name"
+    },
+    {
+      "input": "Elizabeth II",
+      "got": "Elizabeth two",
+      "expected": "Elizabeth the second",
+      "class": "NAME",
+      "note": "regnal numeral",
+      "cause": "regnal_numeral"
+    },
+    {
+      "input": "Henry VIII",
+      "got": "Henry eight",
+      "expected": "Henry the eighth",
+      "class": "NAME",
+      "note": "the same, larger numeral",
+      "cause": "regnal_numeral"
+    }
+  ],
+  "causes": {
+    "one_abbrev_per_span": {
+      "description": "At most one abbreviation inside a span is expanded. A span is handed to one class's grammar, and that grammar rewrites the field it was written for; a second abbreviation in the same span has no second grammar to claim it.",
+      "n": 8
+    },
+    "house_number_as_quantity": {
+      "description": "A house number is read as a quantity rather than as digits in pairs. The grouped reading exists -- PO Box 1234 is 'twelve thirty-four' -- but ADDRESS does not ask for it for the number before the street.",
+      "n": 3
+    },
+    "unspoken_character_glued_on": {
+      "description": "A character with no spoken form that sits against a classified span is copied through verbatim and concatenated to the word beside it, with no space: a sign, or a letter on a house number.",
+      "n": 2
+    },
+    "keyword_before_digits": {
+      "description": "A keyword in front of a number ('dial', 'extension', 'PIN') is evidence no grammar reads, because a grammar cannot see outside its own span. Declined by design, not missing.",
+      "n": 3
+    },
+    "regnal_numeral": {
+      "description": "A Roman numeral behind a name is offered as a cardinal, not an ordinal, because 'World War II' is the same shape and no weight separates them. Declined by design.",
+      "n": 2
+    },
+    "two_digit_year": {
+      "description": "DATE reads four-digit years only, so a two-digit one leaves the prefix to another class.",
+      "n": 1
+    },
+    "month_abbrev_without_year": {
+      "description": "An abbreviated month is expanded inside a full date and left alone without one. 'Sept 11, 2001' works; 'Dec 25' and 'Aug 1990' do not, so DATE wants a year or a comma before it will claim the month.",
+      "n": 3
+    },
+    "measure_claimed_by_phone": {
+      "description": "A short digit run against capital letters is claimed by PHONE before MEASURE gets to it: '797 MB' tags as a phone fragment and comes out 'seven nine seven, M B'. A weighting problem between two classes, not a missing grammar.",
+      "n": 1
+    },
+    "bare_capitals_not_spelled": {
+      "description": "LETTERS spells dotted initialisms and not bare capital runs, because its table is corpus-derived and adding the short ones would break 'IN', 'OR', 'ME' and 'HI' as words. So 'PO' stays 'PO'. Declined by design, with a cost.",
+      "n": 1
+    },
+    "single_initial_name": {
+      "description": "NAME requires two initials, because one initial in front of a capitalised word absorbs it for free and cost '$5.4 M. Central Park' its magnitude. Declined by design.",
+      "n": 1
+    },
+    "missing_from_table": {
+      "description": "The abbreviation or unit is simply not in the table that would expand it. A coverage gap, not a design decision.",
+      "n": 7
+    }
+  }
+}

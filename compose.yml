@@ -18,6 +18,14 @@ services:
         - "traefik.http.routers.oscar_site.rule=Host(`oscarpdalton.com`) || Host(`www.oscarpdalton.com`)"
         - "traefik.http.routers.oscar_site.tls=true"
         - "traefik.http.routers.oscar_site.tls.certresolver=letsEncrypt"
+        # Compress text responses. Measured on the live site before this
+        # existed: /assets/index-*.js was served at 209 KB where it gzips
+        # to 69 KB, and the /frontend page total was 758 KB against about
+        # 210 KB compressed. `vite preview` does not compress, so the edge
+        # is the only place it can happen. Takes effect on the next
+        # `docker stack deploy`, not on a shepherd image roll.
+        - "traefik.http.routers.oscar_site.middlewares=oscar_site_compress"
+        - "traefik.http.middlewares.oscar_site_compress.compress=true"
         - "traefik.http.services.oscar_site.loadbalancer.server.port=4173"
         - "shepherd.oscar-site.enable=true"
     command: sh -c "npm run preview -- --host 0.0.0.0"

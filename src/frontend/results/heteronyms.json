@@ -1,0 +1,1099 @@
+{
+  "stage": "pronounce",
+  "component": "lede",
+  "encoder": "distilroberta-base",
+  "layer_mode": "last4",
+  "corpus": "Wikipedia Homograph Data, evaluation split",
+  "reference": "Gorman, Mazovetskiy and Nikolaev, LREC 2018",
+  "n": 1615,
+  "n_homographs": 162,
+  "errors": 17,
+  "micro": 0.9895,
+  "micro_ci": [
+    0.9832,
+    0.9934
+  ],
+  "macro": 0.9896,
+  "macro_ci": [
+    0.9846,
+    0.994
+  ],
+  "per_word": {
+    "abstract": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "abuse": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "abuses": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "addict": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "advocate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "affect": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "affiliate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "aged": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "aggregate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "alternate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "analyses": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "animate": {
+      "n": 9,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "appropriate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "approximate": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "articulate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "associate": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "attribute": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "august": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "axes": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "bass": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "blessed": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "bologna": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "bow": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "buffet": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "celtic": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "close": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "combine": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "compact": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "compound": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "compress": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "conduct": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "confines": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "conflict": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "conglomerate": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "conjugate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "conscript": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "console": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "consort": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "construct": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "consummate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "content": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "contest": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "contract": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "contrast": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "converse": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "convert": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "convict": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "coordinate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "correlate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "decrease": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "defect": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "degenerate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "delegate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "deliberate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "desert": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "deviate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "diagnoses": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "diffuse": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "discard": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "discharge": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "discount": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "document": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "dove": {
+      "n": 6,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "duplicate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "elaborate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "entrance": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "escort": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "estimate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "excuse": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "expatriate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "exploit": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "export": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "expose": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "extract": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "fragment": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "frequent": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "graduate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "house": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "impact": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "implant": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "implement": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "import": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "incense": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "incline": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "increase": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "increment": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "initiate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "insert": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "instrument": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "insult": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "interchange": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "intimate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "intrigue": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "invalid": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "invert": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "invite": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "isolate": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "jesus": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "job": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "laminate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "lead": {
+      "n": 11,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "learned": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "live": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "lives": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "mate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "minute": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "misuse": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "mobile": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "moderate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "moped": {
+      "n": 9,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "mouth": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "nestle": {
+      "n": 9,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "object": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "ornament": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "overthrow": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "pasty": {
+      "n": 9,
+      "accuracy": 0.8889,
+      "type": "Lexical"
+    },
+    "perfect": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "perfume": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "permit": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "pervert": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "pigment": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "polish": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "postulate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "precipitate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "predicate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "present": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "produce": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "progress": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "project": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "protest": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "ravel": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "read": {
+      "n": 13,
+      "accuracy": 0.9231,
+      "type": "Morphosyntactic"
+    },
+    "reading": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "rebel": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "record": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "recount": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "refund": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "refuse": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "reject": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "rerelease": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "resume": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "retard": {
+      "n": 9,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "rodeo": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "row": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "sake": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "separate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "sow": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "subject": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "subordinate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "supplement": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "suspect": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "syndicate": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "tear": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "transform": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "transplant": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "transport": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "upset": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "use": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "uses": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Morphosyntactic"
+    },
+    "wind": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "winds": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    },
+    "wound": {
+      "n": 10,
+      "accuracy": 1.0,
+      "type": "Lexical"
+    }
+  },
+  "failures": [
+    {
+      "homograph": "conglomerate",
+      "surface": "conglomerate",
+      "gold": "conglomerate_vrb",
+      "gold_train_examples": 0,
+      "predicted": "conglomerate_adj-nou",
+      "predicted_train_examples": 90,
+      "sentence": "The pressure created heat which melted the silica and bonded the quartz and conglomerate together, creating Kittatinny Mountain."
+    },
+    {
+      "homograph": "content",
+      "surface": "content",
+      "gold": "content_adj-nou-vrb",
+      "gold_train_examples": 1,
+      "predicted": "content_nou",
+      "predicted_train_examples": 89,
+      "sentence": "Kim also aims implicit criticism at people content with themselves, who achieve their success by trampling on others."
+    },
+    {
+      "homograph": "associate",
+      "surface": "associate",
+      "gold": "associate_vrb",
+      "gold_train_examples": 9,
+      "predicted": "associate_adj-nou",
+      "predicted_train_examples": 81,
+      "sentence": "Two dimers then associate into a tetramer."
+    },
+    {
+      "homograph": "increment",
+      "surface": "Increment",
+      "gold": "increment_vrb",
+      "gold_train_examples": 11,
+      "predicted": "increment_nou",
+      "predicted_train_examples": 78,
+      "sentence": "They can then use pads marked \"Increment,\" \"Decrement,\" \"Forward,\" and \"Backward\" to change settings."
+    },
+    {
+      "homograph": "pasty",
+      "surface": "pasty",
+      "gold": "pasty_adj",
+      "gold_train_examples": 23,
+      "predicted": "pasty_nou",
+      "predicted_train_examples": 62,
+      "sentence": "The pasty products are moved with the aid of a vane cell feed system under a vacuum."
+    },
+    {
+      "homograph": "upset",
+      "surface": "upset",
+      "gold": "upset_vrb",
+      "gold_train_examples": 24,
+      "predicted": "upset_nou",
+      "predicted_train_examples": 65,
+      "sentence": "Brock was evidently upset by the news that the conspirators had been shot."
+    },
+    {
+      "homograph": "bow",
+      "surface": "bow",
+      "gold": "bow_nou-knot",
+      "gold_train_examples": 43,
+      "predicted": "bow_nou-ship",
+      "predicted_train_examples": 47,
+      "sentence": "The gaunt honesty of those projecting concrete frames carrying boxed-out bow windows persists."
+    },
+    {
+      "homograph": "insert",
+      "surface": "insert",
+      "gold": "insert_nou",
+      "gold_train_examples": 47,
+      "predicted": "insert_vrb",
+      "predicted_train_examples": 43,
+      "sentence": "Similarly easy to the insert operation, Remove() uses the Meld operation to eliminate the root node from the heap."
+    },
+    {
+      "homograph": "sow",
+      "surface": "Sow",
+      "gold": "sow",
+      "gold_train_examples": 52,
+      "predicted": "sow_nou",
+      "predicted_train_examples": 34,
+      "sentence": "He commissioned Edmund Barclay to write the series As Ye Sow which ran for most of 1937."
+    },
+    {
+      "homograph": "tear",
+      "surface": "Tear",
+      "gold": "tear_vrb",
+      "gold_train_examples": 57,
+      "predicted": "tear_nou",
+      "predicted_train_examples": 32,
+      "sentence": "He played bass and shared responsibility for keyboard parts with John Evans on the Tear Off album."
+    },
+    {
+      "homograph": "read",
+      "surface": "read",
+      "gold": "read_present",
+      "gold_train_examples": 60,
+      "predicted": "read_past",
+      "predicted_train_examples": 52,
+      "sentence": "The phenomenon is also described in the journalistic saying, \"You never read about a plane that did not crash\"."
+    },
+    {
+      "homograph": "invalid",
+      "surface": "Invalid",
+      "gold": "invalid_adj",
+      "gold_train_examples": 67,
+      "predicted": "invalid_nou",
+      "predicted_train_examples": 22,
+      "sentence": "It was covered by At the Drive-In for Steve Lamacq and released along with their single \"Invalid Litter Dept.\""
+    },
+    {
+      "homograph": "isolate",
+      "surface": "Isolate",
+      "gold": "isolate",
+      "gold_train_examples": 69,
+      "predicted": "isolate_nou",
+      "predicted_train_examples": 21,
+      "sentence": "Floodwaters from Storm Isolate 13 Vermont Towns; article; The New York Times online; accessed."
+    },
+    {
+      "homograph": "reading",
+      "surface": "Reading",
+      "gold": "reading_en",
+      "gold_train_examples": 74,
+      "predicted": "reading_geo",
+      "predicted_train_examples": 16,
+      "sentence": "The English Common Reader: A Social History of the Mass Reading Public, 1800-1900."
+    },
+    {
+      "homograph": "approximate",
+      "surface": "approximate",
+      "gold": "approximate_adj-nou",
+      "gold_train_examples": 78,
+      "predicted": "approximate_vrb",
+      "predicted_train_examples": 11,
+      "sentence": "All practical schedulers approximate GPS and use it as a reference to measure fairness.\""
+    },
+    {
+      "homograph": "discharge",
+      "surface": "discharge",
+      "gold": "discharge_nou",
+      "gold_train_examples": 80,
+      "predicted": "discharge_vrb",
+      "predicted_train_examples": 10,
+      "sentence": "Owners, or operators of facilities, that discharge regulated waste are then required to secure discharge permits."
+    },
+    {
+      "homograph": "reject",
+      "surface": "Reject",
+      "gold": "reject_vrb",
+      "gold_train_examples": 81,
+      "predicted": "reject_nou",
+      "predicted_train_examples": 5,
+      "sentence": "Another early title was reported to be Reject False Icons, which is also the title of Gorillaz' culture jamming project."
+    }
+  ],
+  "failure_buckets": {
+    "gold_reading_absent_from_training": {
+      "n": 1,
+      "description": "The correct reading has zero training examples, so no classifier fit on this corpus can emit it. Unreachable by any model."
+    },
+    "gold_reading_nearly_absent": {
+      "n": 1,
+      "description": "One or two training examples against dozens for the competing reading. Reachable in principle, not on this data."
+    },
+    "model_error": {
+      "n": 15,
+      "description": "Both readings are well supported in training and the probe chose wrong. The only bucket where a better model is the answer."
+    }
+  },
+  "words_below_100_percent": {
+    "approximate": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "associate": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical/Morphosyntactic"
+    },
+    "bow": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "conglomerate": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "content": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "discharge": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "increment": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "insert": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "invalid": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "isolate": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "pasty": {
+      "n": 9,
+      "accuracy": 0.8889,
+      "type": "Lexical"
+    },
+    "read": {
+      "n": 13,
+      "accuracy": 0.9231,
+      "type": "Morphosyntactic"
+    },
+    "reading": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "reject": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    },
+    "sow": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "tear": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Lexical"
+    },
+    "upset": {
+      "n": 10,
+      "accuracy": 0.9,
+      "type": "Morphosyntactic"
+    }
+  },
+  "pos_baseline": {
+    "available": true,
+    "source": "per_homograph_distilroberta-base.csv",
+    "pos_rule_micro": 0.9542,
+    "pos_rule_errors": 74,
+    "mle_micro": 0.8402,
+    "mle_errors": 258,
+    "paper_best_hybrid_micro": 0.99,
+    "paper_reference": "Gorman et al. 2018, Table 3, server rules + ML"
+  }
+}
