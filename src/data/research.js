@@ -40,7 +40,7 @@ export const research = [
       },
       {
         title: "lambda",
-        text: "CYK chart parser for CCG, composing meanings by beta-reduction into first-order logic. Since absorbed into LambdaCalculator.",
+        text: "CYK chart parser for CCG, composing meanings by beta-reduction into first-order logic.",
         href: gh("lambda"),
       },
     ],
@@ -52,7 +52,7 @@ export const research = [
     items: [
       {
         title: "Scalpel",
-        text: "Zero-dependency FST tokenizer in C++ producing typed tokens.",
+        text: "Zero-dependency rule-based finite-state tokenizer in C++ producing typed tokens, with an FST layer for Irish initial mutations that I added.",
         href: gh("Scalpel"),
       },
       {
@@ -62,7 +62,7 @@ export const research = [
       },
       {
         title: "Morpheme-aware LM for Irish",
-        text: "End-to-end low-resource Irish pipeline on top of Scalpel.",
+        text: "Irish initial-mutation FST, round-tripping 17,200 of 17,201 attested forms from UD Irish-IDT. The morpheme-aware tokenizer and its BPE comparison are still to come.",
         href: gh("Morpheme-Aware-Language-Modeling-for-Irish"),
       },
       {
@@ -79,7 +79,7 @@ export const research = [
     items: [
       {
         title: "sayso",
-        text: "Bidirectional weighted-FST text normalization: one grammar per class, read forwards for TTS and inverted for dictation. 13 classes.",
+        text: "Bidirectional weighted-FST text normalization: one grammar per class, read forwards for TTS and inverted for dictation. 17 classes.",
         href: gh("sayso"),
       },
       {
@@ -115,7 +115,7 @@ export const research = [
     items: [
       {
         title: "Matching engine and market simulator",
-        text: "C++ limit order book matching engine with a generative simulator of market activity.",
+        text: "C++ limit order book matching engine and a validated ITCH measurement harness. The generative flow simulator failed, 8 of 8 viability checks; postmortem included.",
         href: gh("A-Matching-Engine-and-Market-Simulator"),
       },
       {
@@ -125,13 +125,13 @@ export const research = [
       },
       {
         title: "Interpretability of market language models",
-        text: "Probing, activation patching, and sparse autoencoders on transformers trained on market data.",
+        text: "Layerwise ridge probes on a transformer trained on order-book data, with Hewitt-Liang control tasks and shuffled-label baselines, asking whether it encodes latent book state.",
         href: gh("Interpretability-of-Market-Language-Models"),
       },
       {
         title: "Hybrid retrieval over SEC filings",
         text: "BM25 plus dense retrieval with rank fusion over EDGAR filings and earnings calls, with surprisal-based novelty scoring.",
-        href: gh("Hybrid-Retreival-over-SEC-Filings"),
+        href: gh("Hybrid-Retrieval-over-SEC-Filings"),
       },
       {
         title: "Auditing backtests",
@@ -152,7 +152,7 @@ export const research = [
     items: [
       {
         title: "Irish morphological tokenizer with Jane Adkins",
-        text: "A morphological tokenizer for Irish with Jane Adkins, a PhD candidate at DCU. Built on Scalpel's finite-state model of Irish initial mutations.",
+        text: "A morphological tokenizer for Irish with Jane Adkins, a PhD candidate at DCU. Built on the FST layer for Irish initial mutations that I added to Scalpel, covering séimhiú, urú, h-prefix and t-prefix.",
       },
       {
         title: "Irish speech-to-text",
