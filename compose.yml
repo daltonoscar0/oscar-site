@@ -18,14 +18,24 @@ services:
         - "traefik.http.routers.oscar_site.rule=Host(`oscarpdalton.com`) || Host(`www.oscarpdalton.com`)"
         - "traefik.http.routers.oscar_site.tls=true"
         - "traefik.http.routers.oscar_site.tls.certresolver=letsEncrypt"
-        # Compress text responses. Measured on the live site before this
-        # existed: /assets/index-*.js was served at 209 KB where it gzips
-        # to 69 KB, and the /frontend page total was 758 KB against about
-        # 210 KB compressed. `vite preview` does not compress, so the edge
-        # is the only place it can happen. Takes effect on the next
-        # `docker stack deploy`, not on a shepherd image roll.
-        - "traefik.http.routers.oscar_site.middlewares=oscar_site_compress"
-        - "traefik.http.middlewares.oscar_site_compress.compress=true"
+        # No compress middleware here, and that is deliberate after measuring.
+        #
+        # Something upstream already gzips: on the live site /assets/index-*.js
+        # arrives at 67.5 KB against 205.9 KB raw, and the CSS, the HTML and
+        # sayso.js are all gzipped too. An earlier version of this file added
+        # `compress=true` on the strength of a `curl -I`, which on this server
+        # answers HEAD with the *uncompressed* content-length -- so the header
+        # said no compression while a GET was in fact compressed. A middleware
+        # added on that basis was solving nothing.
+        #
+        # What is genuinely not compressed is public/frontend/sayso.wasm:
+        # 409.4 KB on the wire, no content-encoding, which is 80% of the
+        # /frontend page's 511 KB. Gzipped it is 112 KB, so the page would be
+        # about 212 KB. Fixing it means getting application/wasm into whatever
+        # content-type list the upstream compressor uses, and that config is
+        # not in this repo. It is written up in frontend-demo/deploy/ as a
+        # question for whoever runs the Swarm rather than guessed at here,
+        # because an unsupported Traefik label breaks the router it is on.
         - "traefik.http.services.oscar_site.loadbalancer.server.port=4173"
         - "shepherd.oscar-site.enable=true"
     command: sh -c "npm run preview -- --host 0.0.0.0"
